@@ -55,5 +55,15 @@ public class CourseCat {
 	public void setCourseList(ArrayList <Course> courseList) {
 		this.courseList = courseList;
 	}
-
+	
+	@Override
+	public String toString() {
+		StringBuffer b1 = new StringBuffer();
+		b1.append("Course Catalogue:" + '\n');
+		for(int i = 0; i < courseList.size(); i++) {
+			b1.append(courseList.get(i));
+		}
+		String test = b1.toString();
+		return test;
+	}
 }

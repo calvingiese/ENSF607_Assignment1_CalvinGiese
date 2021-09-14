@@ -49,7 +49,6 @@ public class Student {
 	}
 
 	public void addRegistration(Registration registration) {
-		// TODO Auto-generated method stub
 		regList.add(registration);
 		
 	}

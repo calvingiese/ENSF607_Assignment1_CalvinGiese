@@ -20,6 +20,7 @@ public class CourseRegApp {
 		// Welcome screen display
 		reader.display("             Welcome to the course registration App" + '\n');
 		
+		// User selection options, quitting only when the user decides to
 		while(quit == false) {
 			
 			reader.prompt(promptOptions);
@@ -28,18 +29,47 @@ public class CourseRegApp {
 			try {
 				userSelection = Integer.parseInt(userEntry);
 				
+				if(userSelection == 1) {
+					quit = true;
+					break;
+				}
+				if(userSelection == 2) {
+					quit = true;
+					break;
+				}
+				if(userSelection == 3) {
+					quit = true;
+					break;
+				}
+				else if(userSelection == 4) {
+					CourseCat cat = new CourseCat ();  //This loads the courses from our "DB"
+					reader.display('\n' + cat.toString() + '\n');
+				}
+				if(userSelection == 5) {
+					quit = true;
+					break;
+				}
 				if(userSelection == 6) {
 					quit = true;
 					break;
 				}
-
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 			} catch(NumberFormatException e) {
 				System.out.println("That was an invalid entry, please try again");
 			}			
 		}
 		
 		
-//		CourseCat cat = new CourseCat ();  //This loads the courses from our "DB"
+
 //		Student st1 = new Student ("Sara", 1);
 //		Student st2 = new Student ("Joe", 2);
 //		

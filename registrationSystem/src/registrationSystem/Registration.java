@@ -13,7 +13,6 @@ public class Registration {
 	}
 
 	private void addRegistration() {
-		// TODO Auto-generated method stub
 		theStudent.addRegistration(this);
 		theOffering.addRegistration(this);
 	}
