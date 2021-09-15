@@ -36,7 +36,7 @@ public class CourseCat {
 				return c;
 			}
 		}
-		System.err.println("Couse " + courseName + " " + courseNum + " does NOT exist!");
+		System.err.println("Course " + courseName + " " + courseNum + " does NOT exist!");
 		return null;
 	}
 	public void createOffering (Course theCourse, int secNum, int secCap) {

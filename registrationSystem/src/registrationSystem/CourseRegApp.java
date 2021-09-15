@@ -26,7 +26,7 @@ public class CourseRegApp {
 		while(studentQuit == false) {
 			reader.prompt('\n' + "Please enter a student name or 'Quit' to end the program:" + '\n');
 			String studentName = reader.getKeyboardInput();
-			if(studentName.equals("Quit")){
+			if(studentName.toLowerCase().equals("quit")){
 				studentQuit = true;
 				break;
 			}
@@ -71,9 +71,14 @@ public class CourseRegApp {
 								String integerCourseNum = reader.getKeyboardInput();
 								try {
 									int courseNum = Integer.parseInt(integerCourseNum);
-									cat.searchCat(courseName, courseNum);
+									Course myCourse = cat.searchCat(courseName, courseNum);
+									if(myCourse != null) {
+										reader.display("Course " + courseName + " " + courseNum + " was found!" + '\n');
+										cat.createOffering(myCourse, 1, 200);
+										cat.createOffering(myCourse, 2, 150);
+									}
 									courseQuit = true;
-								} catch(NumberFormatException e){
+							} catch(NumberFormatException e){
 									reader.display("That was an invalid entry, please try again");
 								}
 							}
@@ -111,18 +116,8 @@ public class CourseRegApp {
 			}
 			optionQuit = true;
 		}
-		
-		
 
-//		Student st1 = new Student ("Sara", 1);
-//		Student st2 = new Student ("Joe", 2);
-//		
-//		Course myCourse = cat.searchCat("ENGG", 233);
-//		if (myCourse != null) {
-//			cat.createOffering(myCourse, 1, 200);
-//			cat.createOffering(myCourse, 2, 150);
-//		}
-//	    
+   
 //		st1.registerForCourse(cat, "ENGG", 233, 1);
 //		
 //		System.out.println(myCourse.getOfferingList().get(0).getTheCourse());
