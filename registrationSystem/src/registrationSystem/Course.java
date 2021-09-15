@@ -21,7 +21,6 @@ public class Course {
 	//Adding a single offering to a course
 	public void addOffering (Offering theOffering) {
 		offeringList.add(theOffering);
-		
 	}
 	
 	public String getCourseName() {

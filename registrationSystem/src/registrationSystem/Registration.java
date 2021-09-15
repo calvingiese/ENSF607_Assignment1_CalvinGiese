@@ -41,4 +41,8 @@ public class Registration {
 		this.grade = grade;
 	}
 
+	@Override
+	public String toString () {
+		return theOffering.getTheCourse().getCourseName() + " " + theOffering.getTheCourse().getCourseNum();
+	}
 }

@@ -21,6 +21,14 @@ public class CourseCat {
 		imaginaryDB.add(new Course ("ENGG", 233));
 		imaginaryDB.add(new Course ("ENSF", 607));
 		imaginaryDB.add(new Course ("PHYS", 259));
+		imaginaryDB.add(new Course ("ENGG", 201));
+		imaginaryDB.add(new Course ("ENGG", 357));
+		imaginaryDB.add(new Course ("ENSF", 608));
+		imaginaryDB.add(new Course ("ENSF", 612));
+		imaginaryDB.add(new Course ("ENSF", 614));
+		imaginaryDB.add(new Course ("ENME", 341));
+		imaginaryDB.add(new Course ("ENME", 479));
+		imaginaryDB.add(new Course ("ENME", 485));
 		return imaginaryDB;
 	}
 	public ArrayList <Course> searchCat (String courseName) {
@@ -39,12 +47,12 @@ public class CourseCat {
 		System.err.println("Course " + courseName + " " + courseNum + " does NOT exist!");
 		return null;
 	}
+	
 	public void createOffering (Course theCourse, int secNum, int secCap) {
 		if (theCourse != null) {
 			Offering theOffering = new Offering (secNum, secCap);
 			theOffering.setTheCourse(theCourse);   //I set theCourse object reference in the Course
 			theCourse.addOffering(theOffering);
-	
 		}
 	}
 

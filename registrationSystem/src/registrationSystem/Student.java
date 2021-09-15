@@ -6,6 +6,7 @@ public class Student {
 	
 	private String studentName;
 	private int studentId;
+	private int courseCount;
 	private ArrayList <Registration> regList;    //list of course sections
 	
 	public Student  (String studentName, int studentId) {
@@ -13,6 +14,7 @@ public class Student {
 		setStudentId (studentId);
 		setRegList(new ArrayList <Registration>());
 	}
+	
 	public void registerForCourse (CourseCat cat, String courseName, int courseNum, int section) {
 		Course myCourse = cat.searchCat(courseName, courseNum);
 		//Now the student needs to make sure the section exists. and if it does, register!
@@ -24,6 +26,14 @@ public class Student {
 		reg.register(this, theOffering);
 	}
 
+	public void setNumberOfCourses(int x) {
+		this.courseCount = x;
+	}
+	
+	public int getNumberOfCourses() {
+		return this.courseCount;
+	}
+	
 	public String getStudentName() {
 		return studentName;
 	}
@@ -50,8 +60,14 @@ public class Student {
 
 	public void addRegistration(Registration registration) {
 		regList.add(registration);
-		
+		setNumberOfCourses(regList.size());
 	}
+	
+	public void removeRegistration(Registration registration) {
+		regList.remove(registration);
+		setNumberOfCourses(regList.size());
+	}
+	
 	@Override
 	public String toString () {
 		return studentName;
