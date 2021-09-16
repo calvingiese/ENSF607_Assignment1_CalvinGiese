@@ -9,18 +9,18 @@ public class Course {
 	private ArrayList <Offering> offeringList;
 	
 	public Course (String courseName, int courseNum) {
-		setCourseName (courseName);
-		setCourseNum (courseNum);
+		this.courseName = courseName;
+		this.courseNum = courseNum;
 		
 		//This is not composition, because we are not constructing 
 		//an Offering Object(i.e. not calling the constructor of Offering).
 		//We are simply constructing an array
 		preReq = new ArrayList<Course>();
-		offeringList = new ArrayList <Offering>();
+		this.offeringList = new ArrayList <Offering>();
 	}
 	//Adding a single offering to a course
 	public void addOffering (Offering theOffering) {
-		offeringList.add(theOffering);
+		this.offeringList.add(theOffering);
 	}
 	
 	public String getCourseName() {
@@ -41,8 +41,9 @@ public class Course {
 	public void setPreReq(ArrayList <Course> preReq) {
 		this.preReq = preReq;
 	}
+	
 	public ArrayList <Offering> getOfferingList() {
-		return offeringList;
+		return this.offeringList;
 	}
 	public void setOfferingList(ArrayList <Offering> offeringList) {
 		this.offeringList = offeringList;

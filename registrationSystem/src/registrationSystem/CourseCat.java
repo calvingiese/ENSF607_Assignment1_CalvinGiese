@@ -7,7 +7,7 @@ public class CourseCat {
 	private ArrayList <Course> courseList;
 	
 	public CourseCat () {
-		courseList = loadFromDB ();
+		this.courseList = loadFromDB ();
 	}
 
 	private static ArrayList<Course> loadFromDB() {
@@ -33,9 +33,6 @@ public class CourseCat {
 	}
 	public ArrayList <Course> searchCat (String courseName) {
 		ArrayList <Course> foundCourses = new ArrayList <Course>();
-		//search for courses that their name matches courseName and add to the 
-		//foundCourses array
-		
 		return foundCourses;
 	}
 	public Course searchCat (String courseName, int courseNum) {
@@ -57,7 +54,7 @@ public class CourseCat {
 	}
 
 	public ArrayList <Course> getCourseList() {
-		return courseList;
+		return this.courseList;
 	}
 
 	public void setCourseList(ArrayList <Course> courseList) {

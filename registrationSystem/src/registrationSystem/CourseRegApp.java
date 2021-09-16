@@ -9,6 +9,9 @@ public class CourseRegApp {
 		
 		KeyboardReader reader = new KeyboardReader();
 		
+		// Creating course catalogue
+		CourseCat cat = new CourseCat();
+		
 		// Adding students to fill the system
 		Student st1 = new Student("Emily", 101);
 		Student st2 = new Student("Daniel", 102);
@@ -21,20 +24,73 @@ public class CourseRegApp {
 		Student st9 = new Student("Joseph", 109);
 		Student st10 = new Student("Candice", 110);
 		Student st11 = new Student("Foster", 111);
-		Student st12 = new Student("Amy", 112);
+		Student st12 = new Student("Amy", 112);		
+		
+		// Creating course offerings
+		cat.createOffering(cat.getCourseList().get(1), 1, 200);
+		cat.createOffering(cat.getCourseList().get(1), 2, 160);
+		cat.createOffering(cat.getCourseList().get(1), 3, 180);
+		cat.createOffering(cat.getCourseList().get(2), 1, 151);
+		cat.createOffering(cat.getCourseList().get(2), 2, 190);
+		cat.createOffering(cat.getCourseList().get(3), 1, 200);
+		cat.createOffering(cat.getCourseList().get(3), 2, 185);
+		cat.createOffering(cat.getCourseList().get(3), 3, 169);
+		cat.createOffering(cat.getCourseList().get(4), 1, 171);
+		cat.createOffering(cat.getCourseList().get(5), 1, 182);
+		cat.createOffering(cat.getCourseList().get(6), 1, 198);
+		cat.createOffering(cat.getCourseList().get(6), 2, 200);
+		cat.createOffering(cat.getCourseList().get(7), 1, 200);
+		cat.createOffering(cat.getCourseList().get(7), 2, 156);
+		cat.createOffering(cat.getCourseList().get(8), 1, 153);
+		cat.createOffering(cat.getCourseList().get(9), 1, 200);
+		cat.createOffering(cat.getCourseList().get(9), 2, 188);
+		cat.createOffering(cat.getCourseList().get(10), 1, 177);
+		cat.createOffering(cat.getCourseList().get(10), 2, 200);
+		cat.createOffering(cat.getCourseList().get(0), 1, 163);		
+		
+		// Registering students into classes
+		st1.registerForCourse(cat, cat.getCourseList().get(1).getCourseName(), cat.getCourseList().get(1).getCourseNum(), 1);
+		st1.registerForCourse(cat, cat.getCourseList().get(2).getCourseName(), cat.getCourseList().get(2).getCourseNum(), 1);
+		st1.registerForCourse(cat, cat.getCourseList().get(3).getCourseName(), cat.getCourseList().get(3).getCourseNum(), 1);
+		st2.registerForCourse(cat, cat.getCourseList().get(4).getCourseName(), cat.getCourseList().get(4).getCourseNum(), 1);
+		st3.registerForCourse(cat, cat.getCourseList().get(5).getCourseName(), cat.getCourseList().get(5).getCourseNum(), 1);
+		st3.registerForCourse(cat, cat.getCourseList().get(6).getCourseName(), cat.getCourseList().get(6).getCourseNum(), 1);
+		st4.registerForCourse(cat, cat.getCourseList().get(7).getCourseName(), cat.getCourseList().get(7).getCourseNum(), 1);
+		st4.registerForCourse(cat, cat.getCourseList().get(8).getCourseName(), cat.getCourseList().get(8).getCourseNum(), 1);
+		st5.registerForCourse(cat, cat.getCourseList().get(9).getCourseName(), cat.getCourseList().get(9).getCourseNum(), 2);
+		st6.registerForCourse(cat, cat.getCourseList().get(10).getCourseName(), cat.getCourseList().get(10).getCourseNum(), 1);
+		st6.registerForCourse(cat, cat.getCourseList().get(0).getCourseName(), cat.getCourseList().get(0).getCourseNum(), 1);
+		st6.registerForCourse(cat, cat.getCourseList().get(1).getCourseName(), cat.getCourseList().get(1).getCourseNum(), 2);
+		st7.registerForCourse(cat, cat.getCourseList().get(2).getCourseName(), cat.getCourseList().get(2).getCourseNum(), 2);
+		st7.registerForCourse(cat, cat.getCourseList().get(3).getCourseName(), cat.getCourseList().get(3).getCourseNum(), 2);
+		st7.registerForCourse(cat, cat.getCourseList().get(4).getCourseName(), cat.getCourseList().get(4).getCourseNum(), 1);
+		st8.registerForCourse(cat, cat.getCourseList().get(5).getCourseName(), cat.getCourseList().get(5).getCourseNum(), 1);
+		st8.registerForCourse(cat, cat.getCourseList().get(6).getCourseName(), cat.getCourseList().get(6).getCourseNum(), 2);
+		st9.registerForCourse(cat, cat.getCourseList().get(7).getCourseName(), cat.getCourseList().get(7).getCourseNum(), 2);
+		st10.registerForCourse(cat, cat.getCourseList().get(8).getCourseName(), cat.getCourseList().get(8).getCourseNum(), 1);
+		st10.registerForCourse(cat, cat.getCourseList().get(9).getCourseName(), cat.getCourseList().get(9).getCourseNum(), 1);
+		st10.registerForCourse(cat, cat.getCourseList().get(10).getCourseName(), cat.getCourseList().get(10).getCourseNum(), 2);
+		st11.registerForCourse(cat, cat.getCourseList().get(0).getCourseName(), cat.getCourseList().get(0).getCourseNum(), 1);
+		st11.registerForCourse(cat, cat.getCourseList().get(1).getCourseName(), cat.getCourseList().get(1).getCourseNum(), 3);
+		st12.registerForCourse(cat, cat.getCourseList().get(2).getCourseName(), cat.getCourseList().get(2).getCourseNum(), 1);
+		st12.registerForCourse(cat, cat.getCourseList().get(3).getCourseName(), cat.getCourseList().get(3).getCourseNum(), 3);
+		st1.registerForCourse(cat, cat.getCourseList().get(4).getCourseName(), cat.getCourseList().get(4).getCourseNum(), 1);
+		st2.registerForCourse(cat, cat.getCourseList().get(5).getCourseName(), cat.getCourseList().get(5).getCourseNum(), 1);
+		st3.registerForCourse(cat, cat.getCourseList().get(6).getCourseName(), cat.getCourseList().get(6).getCourseNum(), 2);
+		st4.registerForCourse(cat, cat.getCourseList().get(7).getCourseName(), cat.getCourseList().get(7).getCourseNum(), 1);
+		st5.registerForCourse(cat, cat.getCourseList().get(8).getCourseName(), cat.getCourseList().get(8).getCourseNum(), 1);
+		st6.registerForCourse(cat, cat.getCourseList().get(9).getCourseName(), cat.getCourseList().get(9).getCourseNum(), 2);
+		st7.registerForCourse(cat, cat.getCourseList().get(10).getCourseName(), cat.getCourseList().get(10).getCourseNum(), 1);
 		
 		// Declaring necessary variables for loop exits, course requirements, prompts etc.
 		boolean optionQuit = true;
 		boolean studentQuit = false;
 		boolean courseQuit = false;
 		boolean sectionQuit = false;
-		boolean removeQuit = false;
-		boolean courseMatch = false;
-		int sectionMin = 1;
-		int sectionMax = 3;
-		int sizeMin = 150;
-		int sizeMax = 200;
+		boolean addMatch = false;
+		boolean removeMatch = false;
 		int userSelection;
+		int courseMax = 6;
 		String promptOptions = ('\n' + "Please select one of the following options by entering the associated number:" + '\n' +
 								" 1: Search catalogue courses" + '\n' + 
 								" 2: Add course to student courses" + '\n' + 
@@ -79,8 +135,6 @@ public class CourseRegApp {
 						
 					// All other selection options
 					}else {
-						// Creates course catalogue from hard coded options
-						CourseCat cat = new CourseCat ();  //This loads the courses from our "DB"
 						
 						// Search course catalogue
 						if(userSelection == 1) {
@@ -119,7 +173,7 @@ public class CourseRegApp {
 								
 								// Allowing student to add courses if they have less than 6 already
 								int courseCount = s1.getNumberOfCourses();
-								if(courseCount < 6) {
+								if(courseCount < courseMax) {
 									
 									// Get course name
 									reader.prompt("Please enter the course name (e.g. ENGG):" + '\n');
@@ -133,56 +187,86 @@ public class CourseRegApp {
 										String integerCourseNum = reader.getKeyboardInput();
 										try {
 											int courseNum = Integer.parseInt(integerCourseNum);
-											Course myCourse = cat.searchCat(courseName, courseNum);
-											
-											// Setting course parameters
-											if(myCourse != null) {
-												Random rd = new Random();
-												int sectionRand = rd.nextInt(sectionMax - sectionMin + 1) + sectionMin;
-												int sizeRand = rd.nextInt(sizeMax - sizeMin + 1) + sizeMin;
-												
-												// Create offering with multiple sections
-												for(int i = 0; i < sectionRand; i++) {
-													cat.createOffering(myCourse, sectionRand, sizeRand);
-												}
-												
-												// Display course/section options
-												reader.display('\n' + "Course " + courseName + " " + courseNum + " was found!" + '\n');
-												
-												// Getting user's section selection
-												reader.prompt("There are " + sectionRand + " sections available, which one would you like to select?" + '\n');
-												String section = reader.getKeyboardInput();
-												try {
-													while(sectionQuit == false) {
-														int sectionNum = Integer.parseInt(section);
-														
-														// Checking if it's a valid section and adding course for the student
-														if(sectionNum > 0 && sectionNum <= sectionRand) {
-															
-															// Registering the student to the course
-															s1.registerForCourse(cat, courseName, courseNum, sectionNum);
-															
-															// Confirmation to the user
-															reader.display("Section " + sectionNum + " was selected." + '\n' + '\n');
-															reader.display("You have been added to " + courseName + " " + courseNum + " Section " + sectionNum + '\n');
-																									
-															sectionQuit = true;
-														}
-														
-														// Repeating for invalid section selection
-														else {
-															reader.display("That was an invalid entry, please try again" + '\n');
-														}
-													}
-													
-													// Catching invalid section entry types
-												} catch(NumberFormatException e){
-													reader.display("That was an invalid entry, please try again" + '\n');
+
+											// Checking how many sections are available for the course
+											int foundCourse = 0;
+											String courseTest = courseName + " " + courseNum;
+											for(int i = 0; i < cat.getCourseList().size(); i++) {
+												String courseTestRef = cat.getCourseList().get(i).getCourseName() + " " + cat.getCourseList().get(i).getCourseNum();
+												if(courseTest.equals(courseTestRef)) {
+													reader.display(courseTestRef);
+													foundCourse = i;
 												}
 											}
-											courseQuit = true;
+																					
+											// Setting course parameters
+											if(cat.getCourseList().get(foundCourse) != null) {
+												
+												// Check if they have already taken or are taking that course
+												for(int i = 0; i < courseCount; i++) {
+													if(s1.getRegList().get(i).toString().equals(cat.getCourseList().get(foundCourse).getCourseName() + " " + cat.getCourseList().get(foundCourse).getCourseNum())) {
+														addMatch = true;
+													}
+												}
+
+												if(addMatch == false) {
+													
+													int offeringCount = cat.getCourseList().get(foundCourse).getOfferingList().size();
 											
-											// Catching invalid course number entry types
+													// Display course/section options
+													reader.display('\n' + "Course " + courseName + " " + courseNum + " was found!" + '\n');
+													
+													// Getting user's section selection
+													reader.prompt("There are " + offeringCount + " sections available, which one would you like to select?" + '\n');
+													String section = reader.getKeyboardInput();
+													try {
+														while(sectionQuit == false) {
+															int sectionNum = Integer.parseInt(section);
+															
+															// Checking if it's a valid section and adding course for the student
+															if(sectionNum > 0 && sectionNum <= offeringCount) {
+																
+																int studentCount = cat.getCourseList().get(foundCourse).getOfferingList().get(sectionNum).getStudentList().size();
+																
+																// Only allowing less than the student limit into the class
+																if(cat.getCourseList().get(foundCourse).getOfferingList().get(sectionNum).getStudentList().size() < cat.getCourseList().get(foundCourse).getOfferingList().get(sectionNum).getSectionCap()) {
+																	
+																	// Registering the student to the course
+																	s1.registerForCourse(cat, courseName, courseNum, sectionNum);
+																	
+																	// Confirmation to the user
+																	reader.display("Section " + sectionNum + " was selected." + '\n' + '\n');
+																	reader.display("You have been added to " + courseName + " " + courseNum + " Section " + sectionNum + '\n');
+																											
+																	sectionQuit = true;
+																}
+																
+																else {
+																	reader.display("There are too many students in this section, please try another offering" + '\n');
+																	sectionQuit = true;
+																}
+															}
+															
+															// Repeating for invalid section selection
+															else {
+																reader.display("That was an invalid entry, please try again" + '\n');
+																sectionQuit = true;
+															}
+														}
+														
+														// Catching invalid section entry types
+													} catch(NumberFormatException e){
+														reader.display("That was an invalid entry, please try again" + '\n');
+													}
+												}	
+												else {
+													reader.display(s1 + " is already taking " + cat.getCourseList().get(foundCourse).getCourseName() + " " + cat.getCourseList().get(foundCourse).getCourseNum() + '\n');
+												}
+												addMatch = false;
+												courseQuit = true;
+											}
+												
+												// Catching invalid course number entry types
 										} catch(NumberFormatException e){
 											reader.display("That was an invalid entry, please try again" + '\n');
 										}
@@ -214,15 +298,15 @@ public class CourseRegApp {
 									for(int i = 0; i < courseCount; i++) {
 										if(course.equals(s1.getRegList().get(i).toString())) {
 											s1.removeRegistration(s1.getRegList().get(i));
-											courseMatch = true;
+											removeMatch = true;
 											break;
 										}
 									}
 									
 									// Confirmation with the user on what happened
-									if(courseMatch == true) {
+									if(removeMatch == true) {
 										reader.display('\n' + course + " was found and has been removed." + '\n');
-										courseMatch = false;
+										removeMatch = false;
 									}
 									else {
 										reader.display('\n' + course + " was not found." + '\n');

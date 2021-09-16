@@ -16,8 +16,6 @@ public class Offering {
 		studentList = new ArrayList <Registration> ();
 	}
 	public void addRegistration (Registration reg) {
-		//We need to add logic to ensure the requirement for the 
-		//minimum number of students in a section is met.
 		studentList.add(reg);
 	}
 
