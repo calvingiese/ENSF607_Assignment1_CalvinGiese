@@ -237,6 +237,11 @@ public class CourseRegApp {
 																	// Confirmation to the user
 																	reader.display("Section " + sectionNum + " was selected." + '\n' + '\n');
 																	reader.display("You have been added to " + courseName + " " + courseNum + " Section " + sectionNum + '\n');
+																	
+																	// Warning display if there are less than 8 students in the course
+																	if(cat.getCourseList().get(foundCourse).getOfferingList().get(sectionNum).getStudentList().size() < 8) {
+																		reader.display("Warning, there are less than 8 students in this course and it may be cancelled." + '\n');
+																	}
 																											
 																	sectionQuit = true;
 																}
@@ -330,7 +335,10 @@ public class CourseRegApp {
 							
 							// Display course catalogue
 							else if(userSelection == 4) {
-								reader.display('\n' + cat.toString() + '\n');
+								reader.display('\n' + "Course Catalogue:" + '\n');
+								for(int i = 0; i < cat.getCourseList().size(); i++) {
+									reader.display(cat.getCourseList().get(i).getCourseName() + " " + cat.getCourseList().get(i).getCourseNum() + '\n');
+								}
 							}
 							
 							// View student's courses
