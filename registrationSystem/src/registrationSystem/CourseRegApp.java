@@ -128,7 +128,7 @@ public class CourseRegApp {
 				try {
 					userSelection = Integer.parseInt(userEntry);
 					
-					// Ends selection loop
+					// Ends selection loop if the user wants to quit
 					if(userSelection == 6) {
 						optionQuit = true;
 						break;
@@ -182,13 +182,13 @@ public class CourseRegApp {
 									// Only accepting valid input types for course number
 									while(courseQuit == false) {
 										
-										//Get course number
+										// Get course number
 										reader.prompt("Please enter the course number (e.g. 201):" + '\n');
 										String integerCourseNum = reader.getKeyboardInput();
 										try {
 											int courseNum = Integer.parseInt(integerCourseNum);
 
-											// Checking how many sections are available for the course
+											// Checking how many sections are available for the course, foundCourse is the courseList index of the matched course
 											int foundCourse = 0;
 											String courseTest = courseName + " " + courseNum;
 											for(int i = 0; i < cat.getCourseList().size(); i++) {
@@ -199,7 +199,7 @@ public class CourseRegApp {
 												}
 											}
 																					
-											// Setting course parameters
+											// Setting course parameters if the course was found
 											if(cat.getCourseList().get(foundCourse) != null) {
 												
 												// Check if they have already taken or are taking that course
@@ -209,8 +209,10 @@ public class CourseRegApp {
 													}
 												}
 
+												// Only enters if it's a new course
 												if(addMatch == false) {
 													
+													// Number of offerings for the course
 													int offeringCount = cat.getCourseList().get(foundCourse).getOfferingList().size();
 											
 													// Display course/section options
@@ -226,8 +228,6 @@ public class CourseRegApp {
 															// Checking if it's a valid section and adding course for the student
 															if(sectionNum > 0 && sectionNum <= offeringCount) {
 																
-																int studentCount = cat.getCourseList().get(foundCourse).getOfferingList().get(sectionNum).getStudentList().size();
-																
 																// Only allowing less than the student limit into the class
 																if(cat.getCourseList().get(foundCourse).getOfferingList().get(sectionNum).getStudentList().size() < cat.getCourseList().get(foundCourse).getOfferingList().get(sectionNum).getSectionCap()) {
 																	
@@ -241,6 +241,7 @@ public class CourseRegApp {
 																	sectionQuit = true;
 																}
 																
+																// Handles user attempting to overflow a course
 																else {
 																	reader.display("There are too many students in this section, please try another offering" + '\n');
 																	sectionQuit = true;
@@ -259,6 +260,8 @@ public class CourseRegApp {
 														reader.display("That was an invalid entry, please try again" + '\n');
 													}
 												}	
+												
+												// Handles previously/currently taken courses
 												else {
 													reader.display(s1 + " is already taking " + cat.getCourseList().get(foundCourse).getCourseName() + " " + cat.getCourseList().get(foundCourse).getCourseNum() + '\n');
 												}
@@ -266,13 +269,15 @@ public class CourseRegApp {
 												courseQuit = true;
 											}
 												
-												// Catching invalid course number entry types
+										// Catching invalid course number entry types
 										} catch(NumberFormatException e){
 											reader.display("That was an invalid entry, please try again" + '\n');
 										}
 									}
 									courseQuit = false;
 								}
+								
+								// Handles a student trying to take too many courses
 								else {
 									reader.display('\n' + "You already have too many courses, remove one before adding another course" + '\n');
 								}
@@ -316,6 +321,8 @@ public class CourseRegApp {
 									reader.display("The student still has the following courses:" + '\n');
 									reader.display(s1.getRegList().toString() + '\n');
 								}
+								
+								// Handles user with no courses
 								else {
 									reader.display("You don't have any courses yet, unable to remove a course" + '\n');
 								}
@@ -338,12 +345,13 @@ public class CourseRegApp {
 							}
 						}
 					
-				// Handles invalid selection option
-				} catch(NumberFormatException e) {
-					reader.display("That was an invalid entry, please try again" + '\n');
-				}			
-			}
+					// Handles invalid selection option
+					} catch(NumberFormatException e) {
+						reader.display("That was an invalid entry, please try again" + '\n');
+					}			
+				}
 			
+			// Handles non-integer id values
 			} catch(NumberFormatException e) {
 				reader.display("That was an invalid entry, please try again" + '\n');
 			}
